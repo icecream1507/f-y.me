@@ -56,7 +56,7 @@ Github的仓库创建完毕后，我们需要将其与[Vercel](https://vercel.co
 
 项目名称可以自己取，预设框架选择`Other`，最后两个不用管，点击`Deploy`，Vercel就会从你的仓库拉取代码并自动部署网站：
 
-![项目导入设置](/Users/tedfu/Library/Application Support/typora-user-images/image-20200815005619771.png)
+![项目导入设置](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-8.png)
 
 ![成功部署](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-9.png)
 
