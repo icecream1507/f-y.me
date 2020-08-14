@@ -22,8 +22,8 @@
 
 ## 文章
 
-- [你好，世界！
-](./0/hello-world.html)
+- [使用purite和Vercel高效简易地部署你的静态博客
+](./0/use-purite-to-build-website.html)
 
 
 ## 联系我

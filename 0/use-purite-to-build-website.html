@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<link rel="stylesheet" href="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>使用purite和Vercel高效简易地部署你的静态博客
+</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="使用purite和vercel高效简易地部署你的静态博客">使用purite和Vercel高效简易地部署你的静态博客</h1>
+<p>如果你希望在5分钟内构建一个静态的博客或文档网站，并且希望专注于写作本身而不是复杂的操作和奇怪的Bug，那么purite也许是个不错的选择。</p>
+<p>purite可以使你每当想要写作时，需要做的就只有编写一个Markdown文档并运行电脑上的purite程序，然后呢？purite就会为你做好一切，打开浏览器即可以较高的速度访问你的网站和新文章。</p>
+<p>本站便是purite的一个实现。</p>
+<h2 id="部署站点">部署站点</h2>
+<p>你需要先在自己的电脑上安装<a href="https://git-scm.com/">Git</a>和<a href="https://pandoc.org/">Pandoc</a>工具并进行相应配置，因为purite的很多执行操作是基于这两者的，这里不赘述其过程。</p>
+<p>接下来在<a href="https://github,com/">GitHub</a>上新建一个仓库，新建时只需要填写仓库名称，可见性选择Public，就像这样：</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-2.png" alt="新建仓库" /><figcaption aria-hidden="true">新建仓库</figcaption>
+</figure>
+<p>创建完成后能够得到这样一个链接：</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-3.png" alt="仓库链接" /><figcaption aria-hidden="true">仓库链接</figcaption>
+</figure>
+<p>注意：这个时候要选择HTTPS链接而不是SSH，否则可能在部署时会出现一些问题。将类似https://github.com/icecream1507/purite-example.git的地址复制保存下来，这就是将来的博客仓库地址。请保证你的GitHub账号保存了你正在使用的设备的公钥，也就是说你的设备可以正常进行Push等操作。</p>
+<p>接着在<a href="https://github.com/icecream1507/purite/releases/tag/v0.0.1">本项目Release页面</a>下载适用于你的操作系统的压缩包，解压后的文件夹就是你的博客的本地文件夹。打开后应该长这样:</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-1.png" alt="解压后的文件夹" /><figcaption aria-hidden="true">解压后的文件夹</figcaption>
+</figure>
+<p>第一个<code>0</code>文件夹是默认的第一篇文章的文件夹，第二个<code>index-template.md</code>是站点首页的模版文件，第三个<code>purite(.exe)</code>是自动进行部署的可执行文件。</p>
+<p>现在就让我们看看purite的特别之处。打开<code>index-template.md</code>，你可以修改<code>h1</code>标题成你想要的站点标题。你应该注意到了有一行<code>%purite:article_list%</code>，这便是文章列表变量，你可以把它放在这个文件的任何地方，只要保证它单独成行并没有被Markdown语法修饰，这样在自动生成页面时就会将其替换为文章列表。除了变量外，其他你所看到的文字都是字面内容，可以随意编辑。变量的使用可以使你较为自由地改变页面结构、样式，并且不需要与代码打交道。</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-6.png" alt="首页模版文件" /><figcaption aria-hidden="true">首页模版文件</figcaption>
+</figure>
+<p><code>0</code>文件夹中有一个<code>hello-world.md</code>，这是默认的第一篇文章。在将来创作第<code>n</code>篇文章时，你也需要像这样创建一个名为<code>n-1</code>的文件夹，并在该文件夹中编写唯一的Markdown文件，内容就是你的文章，自动生成时此文件会被转化为HTML页面，该文件最好以英文缩略标题命名（例如<code>hello-world.md</code>）以便生成易懂的文章链接，而该文件的第一行需要是一个<code>h1</code>标题作为这篇文章的标题（例如这个<code>hello-world.md</code>第一行的<code>h1</code>标题内容为“你好，世界！”，则此文在文章列表中的标题就是“你好，世界！”）。在这个文件夹中你可以存放与该文章相关的文件，例如要插入的图片、附件等。</p>
+<p>了解了本地博客文件夹的基本结构，就可以开始自动构建了。macOS和Linux用户可以打开终端，进入本地博客文件夹，执行：</p>
+<pre class="shell"><code>sudo ./purite</code></pre>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-7.png" alt="终端处理界面" /><figcaption aria-hidden="true">终端处理界面</figcaption>
+</figure>
+<p>按照提示，依次输入上面创建的Git仓库地址和本次Git提交的备注信息。purite就会帮你初始化Git仓库，把Markdown文件转为HTML页面，生成配置文件，并把内容推送至远程仓库。</p>
+<p>Windows用户可以以管理员身份运行<code>purite.exe</code>，后面过程一样。</p>
+<p>Github的仓库创建完毕后，我们需要将其与<a href="https://vercel.com">Vercel</a>关联起来。Vercel是一家提供静态页面托管服务的网站，支持从Github等Git仓库拉取数据并构建静态网站，并使用CDN加速其访问，在这里我们就要用到它的静态页面托管功能。</p>
+<p>进入Vercel的网站，选择通过Github账号注册并登录，然后就可以导入项目了：</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-4.png" alt="导入项目1" /><figcaption aria-hidden="true">导入项目1</figcaption>
+</figure>
+<p>先点击左边的<code>Continue</code>，再将上面的仓库地址输入并继续。</p>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-5.png" alt="导入项目2" /><figcaption aria-hidden="true">导入项目2</figcaption>
+</figure>
+<p>项目名称可以自己取，预设框架选择<code>Other</code>，最后两个不用管，点击<code>Deploy</code>，Vercel就会从你的仓库拉取代码并自动部署网站：</p>
+<figure>
+<img src="/Users/tedfu/Library/Application%20Support/typora-user-images/image-20200815005619771.png" alt="项目导入设置" /><figcaption aria-hidden="true">项目导入设置</figcaption>
+</figure>
+<figure>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-9.png" alt="成功部署" /><figcaption aria-hidden="true">成功部署</figcaption>
+</figure>
+<p>部署好之后Vercel会给你一个域名，用它就可以访问网站了。Vercel也支持自定义域名，你可以根据它的提示来进一步设置相关内容。</p>
+<p>至此，我们的静态博客部署就全部完成了，如果你对于本文中提到的概念都比较熟悉的话，总时长应该没有超过5分钟吧？（如果我打脸了我就再改改，争取简化流程）这样的站点构建方式可以说是相当轻量了，而部署完成后，要如何进行创作呢？</p>
+<h2 id="创作并发布">创作并发布</h2>
+<p>非常简单，三步即可搞定：</p>
+<ol type="1">
+<li>按上面提到的方式为你要创作的文章创建一个文件夹</li>
+<li>按上面提到的方式用Markdown写好文章，丢到这个文件夹里</li>
+<li>以管理员身份运行purite可执行文件</li>
+</ol>
+<p>做完这三步，如果没有发生错误，那么你的文章就应该发布完成，可以直接在浏览器中查看了。</p>
+<h2 id="自定义站点">自定义站点</h2>
+<p>打开<code>config.json</code>，里面大概长这样</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="dt">&quot;GitRepo&quot;</span><span class="fu">:</span> <span class="st">&quot;https://github.com/icecream1507/purite-example.git&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="dt">&quot;HTMLHead&quot;</span><span class="fu">:</span> <span class="st">&quot;</span><span class="ch">\u003c</span><span class="st">head</span><span class="ch">\u003e\n\u003c</span><span class="st">link rel=</span><span class="ch">\&quot;</span><span class="st">stylesheet</span><span class="ch">\&quot;</span><span class="st"> href=</span><span class="ch">\&quot;</span><span class="st">https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css</span><span class="ch">\&quot;</span><span class="st"> /</span><span class="ch">\u003e</span><span class="st">&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<p>你可以修改<code>"GitRepo"：</code>后的内容来更改博客的远程仓库。</p>
+<p><code>"HTMLHead":</code>后的内容转换成可读的字符串就是：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css&quot;</span> <span class="kw">/&gt;</span>&quot;</span></code></pre></div>
+<p>这其实是一个文本替换的素材，purite在处理生成的HTML页面时会将源码中的<code>&lt;head&gt;</code>替换为上面的两行内容，相当于在HTML页面头部增加信息。这里默认是加了一个样式表的引用，来实现一个简单的主题，你也可以改动<code>"HTMLHead":</code>后的内容来自定义头部信息。</p>
+<h2 id="最后">最后</h2>
+<p>目前purite还在第一个测试版，开发时长为一个通宵。因此，代码不够成熟优雅，功能也比较简单，所以不适合用于生成环境，仅供个人试用。后续我也会抽时间进行开发，不断进行完善。</p>
+<p>那么，purite这个名字的意义是什么呢？ <span class="math display"><em>p</em><em>u</em><em>r</em><em>i</em><em>t</em><em>e</em> = <em>p</em><em>u</em><em>r</em><em>e</em> + <em>w</em><em>r</em><em>i</em><em>t</em><em>e</em></span> 所以，希望purite能给你带来“纯粹的写作”体验。</p>
+<p><strong><em>Ted Fu</em></strong></p>
+<p><strong><em>2020年八月15日凌晨于广州</em></strong></p>
+</body>
+</html>
