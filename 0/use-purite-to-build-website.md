@@ -48,11 +48,11 @@ Github的仓库创建完毕后，我们需要将其与[Vercel](https://vercel.co
 
 进入Vercel的网站，选择通过Github账号注册并登录，然后就可以导入项目了：
 
-![导入项目1](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-4.png)
+![导入项目](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-4.png)
 
 先点击左边的`Continue`，再将上面的仓库地址输入并继续。
 
-![导入项目2](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-5.png)
+![导入项目](https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-5.png)
 
 项目名称可以自己取，预设框架选择`Other`，最后两个不用管，点击`Deploy`，Vercel就会从你的仓库拉取代码并自动部署网站：
 
@@ -84,8 +84,6 @@ Github的仓库创建完毕后，我们需要将其与[Vercel](https://vercel.co
     "HTMLHead": "\u003chead\u003e\n\u003clink rel=\"stylesheet\" href=\"https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css\" /\u003e"
 }
 ```
-
-你可以修改`"GitRepo"：`后的内容来更改博客的远程仓库。
 
 `"HTMLHead":`后的内容转换成可读的字符串就是：
 

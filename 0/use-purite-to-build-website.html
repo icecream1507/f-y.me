@@ -118,11 +118,11 @@
 <p>Github的仓库创建完毕后，我们需要将其与<a href="https://vercel.com">Vercel</a>关联起来。Vercel是一家提供静态页面托管服务的网站，支持从Github等Git仓库拉取数据并构建静态网站，并使用CDN加速其访问，在这里我们就要用到它的静态页面托管功能。</p>
 <p>进入Vercel的网站，选择通过Github账号注册并登录，然后就可以导入项目了：</p>
 <figure>
-<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-4.png" alt="导入项目1" /><figcaption aria-hidden="true">导入项目1</figcaption>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-4.png" alt="导入项目" /><figcaption aria-hidden="true">导入项目</figcaption>
 </figure>
 <p>先点击左边的<code>Continue</code>，再将上面的仓库地址输入并继续。</p>
 <figure>
-<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-5.png" alt="导入项目2" /><figcaption aria-hidden="true">导入项目2</figcaption>
+<img src="https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/0-5.png" alt="导入项目" /><figcaption aria-hidden="true">导入项目</figcaption>
 </figure>
 <p>项目名称可以自己取，预设框架选择<code>Other</code>，最后两个不用管，点击<code>Deploy</code>，Vercel就会从你的仓库拉取代码并自动部署网站：</p>
 <figure>
@@ -147,7 +147,6 @@
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="dt">&quot;GitRepo&quot;</span><span class="fu">:</span> <span class="st">&quot;https://github.com/icecream1507/purite-example.git&quot;</span><span class="fu">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="dt">&quot;HTMLHead&quot;</span><span class="fu">:</span> <span class="st">&quot;</span><span class="ch">\u003c</span><span class="st">head</span><span class="ch">\u003e\n\u003c</span><span class="st">link rel=</span><span class="ch">\&quot;</span><span class="st">stylesheet</span><span class="ch">\&quot;</span><span class="st"> href=</span><span class="ch">\&quot;</span><span class="st">https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css</span><span class="ch">\&quot;</span><span class="st"> /</span><span class="ch">\u003e</span><span class="st">&quot;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
-<p>你可以修改<code>"GitRepo"：</code>后的内容来更改博客的远程仓库。</p>
 <p><code>"HTMLHead":</code>后的内容转换成可读的字符串就是：</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">&lt;head&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://f-y-blog.oss-cn-shenzhen.aliyuncs.com/style.css&quot;</span> <span class="kw">/&gt;</span>&quot;</span></code></pre></div>
