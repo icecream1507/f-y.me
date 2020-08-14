@@ -1,0 +1,26 @@
+html {
+    font-family: serif;
+    font-size: large;
+    margin-left: 16%;
+    margin-right: 16%;
+}
+
+blockquote {
+    color: grey;
+    background-color: rgb(196, 235, 255);
+    padding-left: 1rem;
+    padding-top: 0.05rem;
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+a {
+    color: rgb(255, 192, 213);
+}
+
+img {
+    max-width: 100%;
+}
