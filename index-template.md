@@ -8,7 +8,7 @@
 
 你好，我是Ted Fu，一名准高一学生，来自中国。
 
-出生于广州，目前在广州度假，居住地长沙。
+出生于广州，现居长沙。
 
 初中毕业于长沙青竹湖湘一外国语学校，即将进入长沙市第一中学就读高中。
 
@@ -30,6 +30,10 @@
 - QQ：[1330493178](http://wpa.qq.com/msgrd?v=3&uin=1330493178&site=qq&menu=yes)
 - E-mail：[ic@f-y.me](mailto:ic@f-y.me)
 - Bilibili：[雪糕ic](https://space.bilibili.com/93804220)
+
+## 友情链接
+
+- [Leo](https://66ccff.icu)
 
 ## 随手拍
 
