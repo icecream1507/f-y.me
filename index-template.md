@@ -34,6 +34,7 @@
 ## 友情链接
 
 - [Leo](https://66ccff.icu)
+- [Tony He](https://www.ouorz.com/)
 
 ## 随手拍
 
