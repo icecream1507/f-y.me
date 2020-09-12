@@ -24,6 +24,8 @@
 
 - [使用purite和Vercel高效简易地部署你的静态博客
 ](./0/use-purite-to-build-website.html)
+- [入秋
+](./1/autumn-2020.html)
 
 
 ## 联系我
