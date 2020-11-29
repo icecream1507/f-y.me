@@ -4,21 +4,23 @@
 
 ## 关于我
 
-> 最后更新于2020年八月13日，星期四。
+> 最后更新于2020年十一月29日，星期日。
 
-你好，我是Ted Fu，一名准高一学生，来自中国。
+你好，我是Ted Fu，一名高一学生，来自中国。
 
 出生于广州，现居长沙。
 
-初中毕业于长沙青竹湖湘一外国语学校，即将进入长沙市第一中学就读高中。
-
 母语为汉语（普通话），正在学习英语、粤语。
 
-退役的OIer，喜欢信息技术，喜欢摄影、旅游、玩游戏（主要是Minecraft）和写文章胡扯。学过C++\Python\Golang，正在恶补前端技术。然而我的爱好里没有一项精通。
+退役的OIer，喜欢信息技术，喜欢摄影、休闲式的运动、旅游、玩游戏（主要是Minecraft）和写文章胡扯，非常喜欢在陌生的城市里漫步。学过C++\Python\Golang。
 
 玩过算法竞赛，做过网站，搭建过Minecraft服务器。
 
-装备栏里有MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)，惠普主机 i7-7700/GTX1060 3G/8G RAM/256G SSD+1T HDD，GoPro HERO 7 BLACK，SONY a6000，DJI PHANTOM 4。
+思维很广，想法很多。
+
+对过去的一些美好充满怀念，脑子里经常出现曾经的画面而且相当清晰。感觉过去的生活和史铁生的《好运设计》中所描述的很相似，在关键时刻以及个人和家庭的转折点时，运气总是很好，也不知道为什么，当然也可能是我看问题比较乐观。
+
+知道自己想做什么和能做什么，暂时还没有出现过“青春期迷茫”的问题，不是没有为自己的未来考虑，是感觉自己已经考虑好了。
 
 ## 文章
 
@@ -26,19 +28,19 @@
 ](./0/use-purite-to-build-website.html)
 - [入秋
 ](./1/autumn-2020.html)
+- [广州城市漫步
+](./2/广州城市漫步.html)
 
 
 ## 联系我
 
 - Github：[icecream1507](https://github.com/icecream1507)
 - QQ：[1330493178](http://wpa.qq.com/msgrd?v=3&uin=1330493178&site=qq&menu=yes)
-- E-mail：[ic@f-y.me](mailto:ic@f-y.me)
-- Bilibili：[雪糕ic](https://space.bilibili.com/93804220)
+- E-mail：[fu.boyu@icloud.com](mailto:fu.boyu@icloud.com)
 
 ## 友情链接
 
 - [Leo](https://66ccff.icu)
-- [Tony He](https://www.ouorz.com/)
 
 ## 随手拍
 
